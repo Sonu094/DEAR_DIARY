@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear diary</title>
+</head>
+<body>
+    <nav>Dear Diary</nav><br><br>
+    <a href="{% url 'add' %}">Add new entry</a><br><br><br>
+    <div class="container">
+        <hr>
+        {% for entry in entries %}
+        
+            <div class="entry">
+                <hr>
+                <b>{{ entry.date_posted }}</b>
+                <br><br>
+                {{ entry.text }}
+                <hr>
+            </div>
+
+        {% endfor %}
+        <hr>
+    </div>
+</body>
+</html>
